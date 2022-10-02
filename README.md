@@ -38,3 +38,9 @@ GIVEN a note-taking application:
     -   server starts with `./bin/www` node file instead of `server.js`
     -   uses a templating engine by default. Not sure I'll be using it.
         -   had to change routes to point to html instead of the .hbs files.
+
+## Questions
+
+### package.json
+
+-   should it be `"main": "app.js",`?
