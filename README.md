@@ -30,7 +30,26 @@ GIVEN a note-taking application:
     -   GET `/api/notes` should read the `db.json` file and return all saved notes as JSON.
     -   POST `/api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
 
+## File Structure
+
+| Folder             | Purpose                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------- |
+| /bin               | express.js's version of `server.js`                                                   |
+| /db                | json data                                                                             |
+| /lib               | library for code/files which will be used more than once in other files               |
+| /public            | all client-facing code, such as html, css, images, and js for manipulating DOM.       |
+| /public/assets/js  | functions related to the file name                                                    |
+| /public/views      | front-end .html or .hbs                                                               |
+| /routes            | provides router functions to append URLS to simplify and modularize code, e.g. `/api` |
+| /routes/apiRoutes  | route all API calls                                                                   |
+| /routes/htmlRoutes |                                                                                       |
+| /lib               |                                                                                       |
+
 ## Captain's Log
+
+### 10-2-2022
+
+-   Understanding how to connect all the pieces together to make data flow back-to-front and vice versa.
 
 ### 9-30-2022
 
