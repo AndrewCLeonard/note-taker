@@ -1,11 +1,11 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+var createError = import("http-errors");
+import express from "express";
+import path from "path";
+var cookieParser = import("cookie-parser");
+var logger = import("morgan");
 
-var htmlRoutes = require("./routes/htmlRoutes");
-var apiRoutes = require("./routes/apiRoutes");
+var htmlRoutes = import("../routes/htmlRoutes");
+var apiRoutes = import("../routes/apiRoutes");
 
 var app = express();
 
@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true })); // changed to true
 app.use(cookieParser());
 // app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
+
+// Routes
 
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
@@ -39,4 +41,4 @@ app.use(function (err, req, res, next) {
 	res.render("error");
 });
 
-module.exports = app;
+export default app;

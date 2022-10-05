@@ -1,12 +1,22 @@
 #!/usr/bin/env node
 
 /**
+ * NOT CURRENTLY BEING USED
+ * I was trying to use Express's npx setup, but hitting walls
+ */
+
+/**
  * Module dependencies.
  */
 
-var app = require("../app");
-var debug = require("debug")("note-taker:server");
-var http = require("http");
+import app from "../app.js";
+// var app = require("../app");
+import debugLib from "debug";
+// var debug = require("debug")("note-taker:server");
+import http from "http";
+// var http = require("http");
+
+const debug = debugLib("note-taker:server");
 
 /**
  * Get port from environment and store in Express.

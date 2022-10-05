@@ -20,6 +20,11 @@ GIVEN a note-taking application:
 | click on an existing note in the list in the left-hand column    | that note appears in the right-hand column                                                              |
 | click on the Write icon in the navigation at the top of the page | I am presented with empty fields to enter a new note title and the note’s text in the right-hand column |
 
+### Mock-Ups
+
+![mock-up_1](./public/images/11-express-homework-demo-01.png)
+![mock-up_2](./public/images/11-express-homework-demo-02.png)
+
 ### Other notes
 
 -   The application should have a `db.json` file on the back end that will be used to store and retrieve notes using the `fs` module.
