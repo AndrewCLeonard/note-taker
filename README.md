@@ -68,3 +68,9 @@ GIVEN a note-taking application:
 ### package.json
 
 -   should it be `"main": "app.js",`?
+
+## Backlog
+
+-   create tests
+-   use handlebars or other templating engine to display search results
+-   use Font Awesome API to add onhover color or animation
