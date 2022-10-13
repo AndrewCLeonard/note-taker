@@ -74,3 +74,11 @@ GIVEN a note-taking application:
 -   create tests
 -   use handlebars or other templating engine to display search results
 -   use Font Awesome API to add onhover color or animation
+
+## Issues
+
+1. displaying save icon using js
+    - works with `<p>` tag, but not with `<i>` tag
+    - something about Font Awesome?
+    - incorrect CSS?
+2.

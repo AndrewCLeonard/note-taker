@@ -9,7 +9,10 @@ body {
 	display: none;
 }
 
-.icons svg {
+/* Issue 1 */
+.icons,
+.icons p {
+	/* .icons :is(i, svg, p) { */
 	margin-left: 15px;
 	margin-right: 15px;
 	font-size: 1.5rem;

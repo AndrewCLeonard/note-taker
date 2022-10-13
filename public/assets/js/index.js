@@ -4,6 +4,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+// set variables when on the `/notes` page:
 if (window.location.pathname === "/notes") {
 	noteTitle = document.querySelector(".note-title");
 	noteText = document.querySelector(".note-textarea");
@@ -15,11 +16,14 @@ if (window.location.pathname === "/notes") {
 // Show an element
 const show = (elem) => {
 	elem.style.display = "inline";
+	console.log("show() has been called");
+	console.log(saveNoteBtn);
 };
 
 // Hide an element
 const hide = (elem) => {
 	elem.style.display = "none";
+	console.log("hide() has been called");
 };
 
 // activeNote is used to keep track of the note in the textarea
@@ -63,6 +67,7 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
 	hide(saveNoteBtn);
+	console.log("========== renderActiveNote()");
 
 	if (activeNote.id) {
 		noteTitle.setAttribute("readonly", true);
@@ -122,9 +127,11 @@ const handleNewNoteView = (e) => {
 
 const handleRenderSaveBtn = () => {
 	if (!noteTitle.value.trim() || !noteText.value.trim()) {
+		console.log("handleRenderSaveBtn = hide");
 		hide(saveNoteBtn);
 	} else {
 		show(saveNoteBtn);
+		console.log("handleRenderSaveBtn = show");
 	}
 };
 
