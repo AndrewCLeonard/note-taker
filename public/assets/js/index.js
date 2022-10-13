@@ -40,6 +40,10 @@ const getNotes = () =>
 		},
 	});
 
+/**
+ * save note
+ */
+
 const saveNote = (note) =>
 	fetch("/api/notes", {
 		method: "POST",
@@ -53,6 +57,11 @@ const saveNote = (note) =>
 		}
 		alert("Error: " + response.statusText);
 	});
+
+/**
+ * delete note
+ */
+
 const deleteNote = (id) =>
 	fetch(`/api/notes/${id}`, {
 		method: "DELETE",
