@@ -1,10 +1,24 @@
-[
-	{
-		"title": "Test Title",
-		"text": "Test text"
-	},
-	{
-		"title": "Test Title 2",
-		"text": "Test text 2"
-	}
-]
+{
+  "notes": [
+    {
+      "title": "Test Title",
+      "text": "Test text"
+    },
+    {
+      "title": "Test Title 2",
+      "text": "Test text 2"
+    },
+    {
+      "title": "test 3",
+      "text": "Lorem ipsum going on for a long time, but can't have line breaks."
+    },
+    {
+      "title": "test 3",
+      "text": "Lorem ipsum going on for a long time, but can't have line breaks."
+    },
+    {
+      "title": "test 3",
+      "text": "Lorem ipsum going on for a long time, but can't have line breaks."
+    }
+  ]
+}

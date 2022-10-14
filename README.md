@@ -77,8 +77,10 @@ GIVEN a note-taking application:
 
 ## Issues
 
+_find issues in the code by searching "issue #"_
+
 1. displaying save icon using js
     - works with `<p>` tag, but not with `<i>` tag
     - something about Font Awesome?
     - incorrect CSS?
-2.
+2. in `noteRoutes.js`, notes need to be in curly braces to treat it as an array?

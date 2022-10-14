@@ -1,6 +1,4 @@
-// why do I require express here?
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
 const noteRoutes = require("./noteRoutes");
 
