@@ -83,4 +83,7 @@ _find issues in the code by searching "issue #"_
     - works with `<p>` tag, but not with `<i>` tag
     - something about Font Awesome?
     - incorrect CSS?
-2. in `noteRoutes.js`, notes need to be in curly braces to treat it as an array?
+2. in `noteRoutes.js`, why does `notes` need to be `{ notes }` wrapped in curly braces?
+3. `renderNoteList`
+    - I don't see this promise in returning any results
+    - This function is long and convoluted. It should be refactored.

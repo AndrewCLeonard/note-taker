@@ -38,7 +38,7 @@ const getNotes = () =>
 		headers: {
 			"Content-Type": "application/json",
 		},
-	});
+	}).then(console.log("getNotes()"));
 
 /**
  * save note
@@ -76,7 +76,7 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
 	hide(saveNoteBtn);
-	console.log("========== renderActiveNote()");
+	console.log("========== renderActiveNote() ==========");
 
 	if (activeNote.id) {
 		noteTitle.setAttribute("readonly", true);
@@ -144,11 +144,18 @@ const handleRenderSaveBtn = () => {
 	}
 };
 
+// issue 3: I don't see this promise returning any results
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+	console.log(`===== renderNoteList() =====`);
+	console.log(window.location.pathname === "/notes");
 	let jsonNotes = await notes.json();
 	if (window.location.pathname === "/notes") {
-		noteList.forEach((el) => (el.innerHTML = ""));
+		console.log("on the /notes page");
+		noteList.forEach((el) => {
+			console.log(el);
+			el.innerHTML = "";
+		});
 	}
 
 	let noteListItems = [];
@@ -179,7 +186,7 @@ const renderNoteList = async (notes) => {
 	if (jsonNotes.length === 0) {
 		noteListItems.push(createLi("No saved Notes", false));
 	}
-
+	console.log("jsonNotes.forEach:");
 	jsonNotes.forEach((note) => {
 		const li = createLi(note.title);
 		li.dataset.note = JSON.stringify(note);
@@ -188,6 +195,7 @@ const renderNoteList = async (notes) => {
 	});
 
 	if (window.location.pathname === "/notes") {
+		console.log("noteListItems.forEach:");
 		noteListItems.forEach((note) => noteList[0].append(note));
 	}
 };
