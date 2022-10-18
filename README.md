@@ -86,3 +86,4 @@ _find issues in the code by searching "issue #"_
 3. `renderNoteList`
     - I don't see this promise in returning any results
     - This function is long and convoluted. It should be refactored.
+4. Why does the number become a string?
