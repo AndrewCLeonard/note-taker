@@ -48,7 +48,6 @@ GIVEN a note-taking application:
 | /routes            | provides router functions to append URLS to simplify and modularize code, e.g. `/api` |
 | /routes/apiRoutes  | route all API calls                                                                   |
 | /routes/htmlRoutes |                                                                                       |
-| /lib               |                                                                                       |
 
 ## Captain's Log
 
