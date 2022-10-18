@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { createNewNote } = require("../../public/assets/js/notes");
+const { findById } = require("../../lib/notes");
 
 // data
 // issue 2: notes need to be in curly braces to treat it as an array?
@@ -9,6 +10,18 @@ const { notes } = require("../../db/db");
 router.get("/notes", (req, res) => {
 	let result = notes;
 	res.json(result);
+});
+
+router.get("/notes/:id", (req, res) => {
+	console.log(`===== get note by id ======`);
+	console.log(req.params.id);
+	console.log(req.params);
+	const result = findById(req.params.id, notes);
+	if (result) {
+		res.json(result);
+	} else {
+		res.sendStatus(404);
+	}
 });
 
 router.post("/notes", (req, res) => {
@@ -26,8 +39,7 @@ router.post("/notes", (req, res) => {
 	res.json(note);
 	console.log(`
 	
-	===================noteRoutes.js===================
-							END
+	===================noteRoutes.js=================== END
 	`);
 });
 

@@ -65,6 +65,7 @@ const saveNote = (note) =>
 
 const deleteNote = (id) => {
 	console.log("===== deleteNote (id) =====");
+	console.log(id);
 	fetch(`/api/notes/${id}`, {
 		method: "DELETE",
 		headers: {
@@ -82,6 +83,7 @@ const renderActiveNote = () => {
 	console.log("========== renderActiveNote() ==========");
 
 	if (activeNote.id) {
+		console.log(`activeNote.id: ${activeNote.id}`);
 		noteTitle.setAttribute("readonly", true);
 		noteText.setAttribute("readonly", true);
 		noteTitle.value = activeNote.title;
@@ -133,7 +135,7 @@ const handleNoteView = (e) => {
 
 	e.preventDefault();
 	activeNote = JSON.parse(e.target.parentElement.getAttribute("data-note"));
-	console.log(`activeNote = ${activeNote}`);
+	console.log(`activeNote = ${activeNote.title}, id = ${activeNote.id} `);
 	renderActiveNote();
 };
 
