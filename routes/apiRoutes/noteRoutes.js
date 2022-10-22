@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { createNewNote } = require("../../public/assets/js/notes");
-const { findById } = require("../../lib/notes");
+const {  deleteNote } = require("../../lib/notes");
 
 // data
 // issue 2: notes need to be in curly braces to treat it as an array?
-const { notes } = require("../../db/db");
+let { notes } = require("../../db/db");
 
 // routes
 router.get("/notes", (req, res) => {
@@ -41,6 +41,21 @@ router.post("/notes", (req, res) => {
 	
 	===================noteRoutes.js=================== END
 	`);
+});
+
+router.delete("/notes/:id", (req, res) => {
+	var note = req.params.id;
+	console.log(`note to delete = ${note}`);
+	console.log(`notes before:
+	
+	`);
+	console.log(notes);
+	deleteNote(note, notes);
+	console.log(`notes after:
+	
+	`);
+	console.log(notes);
+	res.send(notes);
 });
 
 module.exports = router;
