@@ -6,14 +6,25 @@ const { findById } = require("../../lib/notes");
 // issue 2: notes need to be in curly braces to treat it as an array?
 const { notes } = require("../../db/db");
 
-// routes
+/**
+ * ROUTES START
+ */
+
+/**
+ * GET
+ */
 router.get("/notes", (req, res) => {
+	console.log(`===== get notes ======`);
 	let result = notes;
 	res.json(result);
 });
-
+/**
+ * GET by id
+ */
 router.get("/notes/:id", (req, res) => {
-	console.log(`===== get note by id ======`);
+	console.log(`
+
+	===== get note by id ======`);
 	console.log(req.params.id);
 	console.log(req.params);
 	const result = findById(req.params.id, notes);
@@ -23,7 +34,9 @@ router.get("/notes/:id", (req, res) => {
 		res.sendStatus(404);
 	}
 });
-
+/**
+ * POST
+ */
 router.post("/notes", (req, res) => {
 	console.log(`
 	
@@ -41,6 +54,24 @@ router.post("/notes", (req, res) => {
 	
 	===================noteRoutes.js=================== END
 	`);
+});
+/**
+ * DELETE
+ */
+router.delete("/notes/:id", (req, res) => {
+	console.log(`
+	
+router.delete ============================================================================
+	
+	`);
+	console.log(req.params.id);
+	console.log(req.params);
+	const result = findById(req.params.id, notes);
+	if (result) {
+		res.json(result);
+	} else {
+		res.sendStatus(404);
+	}
 });
 
 module.exports = router;

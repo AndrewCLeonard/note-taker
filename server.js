@@ -1,6 +1,8 @@
 const express = require("express");
+var favicon = require("serve-favicon");
+var path = require("path");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
@@ -8,9 +10,10 @@ const htmlRoutes = require("./routes/htmlRoutes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // Use apiRoutes
-app.use("/api", apiRoutes);	
+app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
 app.listen(PORT, () => {
