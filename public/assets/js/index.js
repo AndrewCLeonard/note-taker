@@ -11,8 +11,7 @@ if (window.location.pathname === "/notes") {
 	saveNoteBtn = document.querySelector(".save-note");
 	newNoteBtn = document.querySelector(".new-note");
 	noteList = document.querySelectorAll(".list-container .list-group");
-	// deleteNoteBtn = 
-	
+	// deleteNoteBtn =
 }
 
 // Show an element
@@ -64,21 +63,6 @@ const saveNote = (note) => {
 };
 
 /**
- * delete note
- */
-
-const deleteNote = (id) => {
-	console.log("===== deleteNote (id) =====");
-	console.log(id);
-	fetch(`/api/notes/${id}`, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	});
-};
-
-/**
  * API CALLS END
  */
 
@@ -115,6 +99,21 @@ const handleNoteSave = () => {
 	});
 };
 
+/**
+ * delete note
+ */
+
+const deleteNote = (id) => {
+	console.log("===== deleteNote (id) =====");
+	console.log(id);
+	fetch(`/api/notes/${id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+};
+
 // Delete the clicked note
 const handleNoteDelete = (e) => {
 	console.log("===== handleNoteDelete() =====");
@@ -122,6 +121,7 @@ const handleNoteDelete = (e) => {
 	e.stopPropagation();
 
 	const note = e.target;
+	console.log(`note = ${note}`);
 	const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
 	console.log(`noteId: ${noteId}`);
 	console.log(`activeNote.id: ${activeNote.id}`);
@@ -130,10 +130,12 @@ const handleNoteDelete = (e) => {
 		activeNote = {};
 	}
 
-	deleteNote(noteId).then(() => {
-		getAndRenderNotes();
-		renderActiveNote();
-	});
+	deleteNote(noteId);
+	// .then(() => {
+	// getAndRenderNotes();
+	// renderActiveNote();
+	// });
+	console.log("===== handleNoteDelete() ===== END");
 };
 
 // Sets the activeNote and displays it
