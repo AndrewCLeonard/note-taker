@@ -78,3 +78,4 @@ GIVEN a note-taking application:
 
 _find issues in the code by searching "issue #"_
 
+1. why does importing jest cause an "Jest encountered an unexpected token" error?
