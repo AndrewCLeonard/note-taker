@@ -39,7 +39,7 @@ const getNotes = () => {
 			"Content-Type": "application/json",
 		},
 		// if this were a callback function, it would break the promise by opening scope with new function
-	}).then(console.log("===== getNotes() ====="));
+	});
 };
 
 /**
@@ -63,10 +63,11 @@ const saveNote = (note) =>
  * delete note
  */
 
+// !! ARROW FUNCTIONS REQURIE A RETURN (with curly braces) !!
 const deleteNote = (id) => {
 	console.log("===== deleteNote (id) =====");
 	console.log(id);
-	fetch(`/api/notes/${id}`, {
+	return fetch(`/api/notes/${id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -110,14 +111,11 @@ const handleNoteSave = () => {
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
-	console.log("===== handleNoteDelete() =====");
 	// Prevents the click listener for the list from being called when the button inside of it is clicked
 	e.stopPropagation();
 
 	const note = e.target;
 	const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
-	console.log(`noteId: ${noteId}`);
-	console.log(`activeNote.id: ${activeNote.id}`);
 
 	if (activeNote.id === noteId) {
 		activeNote = {};
@@ -131,11 +129,8 @@ const handleNoteDelete = (e) => {
 
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
-	console.log("===== handleNoteView() =====");
-
 	e.preventDefault();
 	activeNote = JSON.parse(e.target.parentElement.getAttribute("data-note"));
-	console.log(`activeNote = ${activeNote.title}, id = ${activeNote.id} `);
 	renderActiveNote();
 };
 
@@ -213,7 +208,6 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 // const getAndRenderNotes = () => getNotes().then(renderNoteList);
 const getAndRenderNotes = () => {
-	console.log(`===== getAndRenderNotes() =====`);
 	getNotes().then(renderNoteList);
 };
 

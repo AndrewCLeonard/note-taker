@@ -3,18 +3,16 @@ const path = require("path");
 
 function createNewNote(body, notes) {
 	const note = body;
-
-	console.log(`body:
-    
-    `);
-	console.log(typeof body);
-	console.log(notes);
-
 	notes.push(note);
 	fs.writeFileSync(path.join(__dirname, "../../../db/db.json"), JSON.stringify({ notes }, null, 2));
 	return note;
 }
 
+function deleteNote(notes) {
+	fs.writeFileSync(path.join(__dirname, "../../../db/db.json"), JSON.stringify({ notes }, null, 2));
+}
+
 module.exports = {
 	createNewNote,
+	deleteNote,
 };
