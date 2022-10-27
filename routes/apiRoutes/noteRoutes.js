@@ -3,7 +3,6 @@ const { createNewNote, deleteNote } = require("../../public/assets/js/notes");
 const { findById } = require("../../lib/notes");
 
 // data
-// issue 2: notes need to be in curly braces to treat it as an array?
 let { notes } = require("../../db/db");
 
 /**

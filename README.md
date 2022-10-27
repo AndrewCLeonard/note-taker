@@ -78,12 +78,3 @@ GIVEN a note-taking application:
 
 _find issues in the code by searching "issue #"_
 
-1. displaying save icon using js
-    - works with `<p>` tag, but not with `<i>` tag
-    - something about Font Awesome?
-    - incorrect CSS?
-2. in `noteRoutes.js`, why does `notes` need to be `{ notes }` wrapped in curly braces?
-3. `renderNoteList`
-    - I don't see this promise in returning any results
-    - This function is long and convoluted. It should be refactored.
-4. Why does the number become a string?

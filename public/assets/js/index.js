@@ -151,7 +151,6 @@ const handleRenderSaveBtn = () => {
 	}
 };
 
-// issue 3: I don't see this promise returning any results
 // Render the list of note titles
 const renderNoteList = async (notes) => {
 	console.log(`===== renderNoteList() =====`);
