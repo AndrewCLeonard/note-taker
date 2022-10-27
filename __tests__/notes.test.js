@@ -19,7 +19,9 @@ test("creates a new note", () => {
 
 test("delete a note", () => {
 	const noteInDB = notes[0].id;
+	console.log(noteInDB);
 	deleteNote(noteInDB);
+	console.log(noteInDB);
 	const result = notes.filter((noteIDs) => noteInDB !== noteIDs);
 	console.log(result);
 
